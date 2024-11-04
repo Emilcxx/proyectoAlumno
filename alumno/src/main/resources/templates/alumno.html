@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Alumno</title>
+</head>
+<body>
+    <h1>Editar Alumno</h1>
+    <form th:action="@{/alumnos/guardar}" th:object="${alumno}" method="post">
+        <div>
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" th:field="*{dni}" required>
+        </div>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" th:field="*{nombre}" required>
+        </div>
+        <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" th:field="*{apellido}" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" th:field="*{email}" required>
+        </div>
+        <div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" th:field="*{telefono}" required>
+        </div>
+        <div>
+            <label for="fechaDeNacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fechaDeNacimiento" th:field="*{fechaDeNacimiento}" required>
+        </div>
+        <button type="submit">Guardar Cambios</button>
+        <a href="/alumnos">Cancelar</a>
+    </form>
+</body>
+</html>
